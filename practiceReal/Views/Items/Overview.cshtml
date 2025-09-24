@@ -1,0 +1,41 @@
+﻿@model practiceReal.Models.Item
+@{
+    var message = "Hello World owo";
+    var items = new List<string> {"Item1","Item2","Item3" };
+}
+
+<ul>
+    @foreach(var item in items)
+    {
+        <li>@item</li>
+    }
+</ul>
+<p>This is the name of the item @Model.Name </p>
+
+<h1>@Model.Id</h1>
+
+@{
+    var isloggedIn = true;
+}
+@if(isloggedIn)
+{
+    <p>Welcome back!</p>
+}
+else
+{
+    <p>Please log tf in</p>
+}
+
+
+
+/* Razor Tag Helpers Feature */
+
+<form asp-action="Submit">
+    <div>
+        <input asp-for="Name" />"
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+
